@@ -45,6 +45,8 @@ export function AuthProvider(props: AuthProviderProps) {
     
     localStorage.setItem('@DoWhile:token', token)
 
+    api.defaults.headers.common.authorization = `Bearer ${token}`
+
     setUser(user)
   }
   
